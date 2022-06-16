@@ -2,7 +2,7 @@
 
     include_once('connect.php');
 
-    $name_user = $_POST['nome_usuario'];
+    $name_user = $_POST['nome123'];
     $lastname_user = $_POST['sobrenome_usuario'];
     $email_user = $_POST['email_usuario'];
     $password_user = $_POST['senha_usuario'];
@@ -16,26 +16,25 @@
     $birth_date_user = $_POST['dtNasc_usuario']; 
 
     $conn = connect();
-    $sql = "INSERT INTO usuarios
-            (
-                `id_usuario`, 
-                `nome_usuario`, 
-                `sobrenome_usuario`, 
-                `cpf_usuario`, 
-                `rg_usuario`, 
-                `email_usuario`, 
-                `celular_usuario`, 
-                `uf_usuario`, 
-                `cidade_usuario`, 
-                `bairro_usuario`, 
-                `endereco_usuario`, 
-                `dtNasc_usuario`, 
-                `dtCad_usuario`,
-                `senha_usuario`
+    $sql = "INSERT INTO 
+            usuarios(
+                nome_usuario, 
+                sobrenome_usuario, 
+                cpf_usuario, 
+                rg_usuario, 
+                email_usuario, 
+                celular_usuario, 
+                uf_usuario, 
+                cidade_usuario, 
+                bairro_usuario, 
+                endereco_usuario, 
+                dtNasc_usuario, 
+                dtCad_usuario,
+                senha_usuario
             ) 
 
             VALUES
-            (   
+            (       
                 '$name_user',
                 '$lastname_user',
                 '$cpf_user',
