@@ -14,5 +14,5 @@
 > PHP
 > MySQL
 
-//Resumindo, o projeto é para eu sair da zona de conforto e estudar programação!
+//Resumindo, o projeto é para eu sair da zona de conforto e estudar programação! <br>
 //becoming a better dev
