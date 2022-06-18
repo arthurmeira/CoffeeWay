@@ -1,3 +1,5 @@
+//Validation password
+
 let psswrd = document.getElementById("password");
 let confirm_psswrd = document.getElementById("check_usuario");
 
