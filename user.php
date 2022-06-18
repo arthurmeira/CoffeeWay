@@ -1,4 +1,5 @@
 <?php
+
     include_once('connect.php');
 
     $name_user = $_POST['nome_usuario'];
@@ -50,4 +51,5 @@
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+    
 ?>

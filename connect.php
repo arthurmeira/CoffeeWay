@@ -1,4 +1,6 @@
 <?php
+    
+    
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -12,4 +14,5 @@
     }else{
         echo 'Connected <br>';
     }
+
 ?>
