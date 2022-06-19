@@ -1,7 +1,9 @@
 <?php
 
+    //Chamando o arquivo 'connect.php'
     include_once('connect.php');
 
+    //Declarando variáveis para cada 'id' do form de cadastro
     $name_user = $_POST['nome_usuario'];
     $lastname_user = $_POST['sobrenome_usuario'];
     $email_user = $_POST['email_usuario'];
@@ -15,6 +17,7 @@
     $address_user = $_POST['endereco_usuario'];
     $birth_date_user = $_POST['dtNasc_usuario']; 
 
+    //Variável $sql responsável por inserir os dados do cadastro no banco
     $sql = "INSERT INTO 
             usuarios(
                 nome_usuario,
@@ -46,6 +49,7 @@
                 '$password_user'
             )";
 
+    //Chek para ver se o registro do $sql funcionou ou não
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
