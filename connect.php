@@ -1,17 +1,17 @@
 <?php
 
+    //Declarando o banco com suas respectivas variáveis de acesso
     $servername = "localhost";
     $username = "root";
     $password = "";
     $database = "coffeeway";
 
-    global $servername, $username, $password, $database;
+    //Conexão ao com mysqli
     $conn = new mysqli($servername, $username, $password, $database);
 
+    //Retornar erro de conexão
     if (!$conn) {
         die('Not connected: ' . mysqli_connect_error());
-    }else{
-        echo 'Connected <br>';
     }
 
 ?>
