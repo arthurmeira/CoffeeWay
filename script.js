@@ -1,15 +1,13 @@
 //Validation password
 
-let psswrd = document.getElementById("password");
-let confirm_psswrd = document.getElementById("check_usuario");
+let senha = document.getElementById("password");
+let check = document.getElementById("check_usuario");
 
-function validatePsswrd(){
-    if (psswrd.value != confirm_psswrd.value) {
-        confirm_psswrd.setCustomValidity("Senhas diferentes!");
+function validation(){
+    if (senha.value !== check.value) {
+        console.log('Not equal');
     } else {
-        confirm_psswrd.setCustomValidity("");
+        console.log("Ok");
     }
 }
-
-psswrd.onchange = validatePsswrd;
-confirm_psswrd.onkeyup = validatePsswrd;
+validation();
