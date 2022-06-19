@@ -1,4 +1,4 @@
-//Validation password
+/* Validação de senhas - JS
 
 let senha = document.getElementById("password");
 let check = document.getElementById("check_usuario");
@@ -10,4 +10,4 @@ function validation(){
         console.log("Ok");
     }
 }
-validation();
+*/
