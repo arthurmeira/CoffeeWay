@@ -8,6 +8,7 @@
 
     //Conexão ao com mysqli
     $conn = new mysqli($servername, $username, $password, $database);
+    return $conn;
 
     //Retornar erro de conexão
     if (!$conn) {
