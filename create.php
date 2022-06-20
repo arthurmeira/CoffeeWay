@@ -1,3 +1,4 @@
+
 <?php
 
     //Chamando o arquivo 'connect.php'
@@ -57,5 +58,7 @@
     }
 
     mysqli_close($conn);
-    
+     
 ?>
+
+
