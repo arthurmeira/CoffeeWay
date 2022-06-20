@@ -1,3 +1,12 @@
+<?php
+
+    //Chamando todos os arquivos necessários 
+    include_once("connect.php");
+    include_once("update.php");
+    include_once("view.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
