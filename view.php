@@ -20,6 +20,7 @@
 <header>
     <div class="logo">
         <h1>CoffeeWay</h1>
+       
     </div><!--logo-->
 </header>
 
@@ -28,24 +29,28 @@
     <div class="container">
         <div class="card">
             <fieldset>
-                <h2>Usuários</h3>
+                <div class="top">
+                    <h2>Usuários</h3>
+                    <a href="/Projeto/CoffeeWay/record.php">New</a>
+                </div>
                 <hr>
-                
+                 
                 <table>
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>E-mail</th>
-                        <th>Celular</th>
-                        <th>UF</th>
-                        <th>Cidade</th>
-                        <th>Bairro</th>
-                        <th>Endereço</th>
-                        <th>Data aniversário</th>
-                        <th>Data cadastro</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>E-mail</th>
+                            <th>Celular</th>
+                            <th>UF</th>
+                            <th>Cidade</th>
+                            <th>Bairro</th>
+                            <th>Endereço</th>
+                            <th>Data aniversário</th>
+                            <th>Data cadastro</th>
+                            <th>Ações</th>
+                        </tr>
                     </thead>
 
                     <?php while ($row = mysqli_fetch_array($results)) { ?>
@@ -63,14 +68,14 @@
                             <td><?php echo $row['dtCad_usuario']; ?></td>
         
                             <div class="btn" >
-                                <td><a href="/edit.php">Edit</a></td>
-                                <td><a href="/delete.php">Delete</a></td>
+                                <td><a href="edit.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a></td>
+                                <td><a href="delete.php?delete=<?php echo $row['id']; ?>" class="edit_btn" >Delete</a></td>
                             </div><!--btn-->
-                            
                         </tr>
                     <?php } ?>
-                </table>
+                    
 
+                </table>
             </fieldset>
         </div><!--card-->
     </div><!--container-->

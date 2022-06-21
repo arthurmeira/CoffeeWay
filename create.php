@@ -16,6 +16,7 @@
         $district_user = $_POST['bairro_usuario'];
         $address_user = $_POST['endereco_usuario'];
         $birth_date_user = $_POST['dtNasc_usuario']; 
+        $date_record = $_POST['dtCad_usuario']; 
 
         //Variável $sql responsável por inserir os dados do cadastro no banco
         $sql = "INSERT INTO 
@@ -30,7 +31,8 @@
                     cidade_usuario, 
                     bairro_usuario, 
                     endereco_usuario, 
-                    dtNasc_usuario, 
+                    dtNasc_usuario,
+                    dtCad_usuario,  
                     senha_usuario
                 ) 
 
@@ -46,6 +48,7 @@
                     '$district_user', 
                     '$address_user',
                     '$birth_date_user',
+                    '$date_record',
                     '$password_user'
                 )";
 
@@ -73,5 +76,7 @@
 </head>
 <body>
     
+        <a href="/Projeto/CoffeeWay/view.php">Ver registros</a>
+
 </body>
 </html>

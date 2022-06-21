@@ -99,6 +99,9 @@
                         <label for="birth_date">* Data de nascimento</label>
                         <input type="date"  name="dtNasc_usuario" id="birth_date" required> <br>
 
+                        <label for="date_record">* Data de cadastro</label>
+                        <input type="date"  name="dtCad_usuario" id="date_record" required> <br>
+
                         <input type="submit" name="sbmt" value="Cadastrar" link="create.php">
 
                     </form>
