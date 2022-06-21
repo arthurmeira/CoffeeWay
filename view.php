@@ -1,112 +1,83 @@
 <?php
 
-//Chamando todos os arquivos necessários 
-//include_once("connect.php");
-//include_once("update.php");
-//include_once("read.php");
+    //Chamando todos os arquivos necessários 
+    include_once("connect.php");
+    $results = mysqli_query($conn, "SELECT * FROM usuarios");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoffeeWay</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read - CoffeeWay</title>
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <h1>CoffeeWay</h1>
-            <hr>
-            <br>
-        </div><!--logo-->
-    </header>
+    
 
-    <section>
-        <div class="container">
-            <div class="user_form">
-                <fieldset style="width: 180px; padding: 20px;">  
-                    <form method="post" action="user.php">
-                        <label for="name">* Nome</label>
-                        <input type="text" name="nome_usuario" id="name" required> <br>
+<header>
+    <div class="logo">
+        <h1>CoffeeWay</h1>
+    </div><!--logo-->
+</header>
 
-                        <label for="last_name">* Sobrenome</label>
-                        <input type="text" name="sobrenome_usuario" id="last_name" required> <br>
-                        
-                        <label for="email">* E-mail</label>
-                        <input type="email" name="email_usuario" id="email" required> <br>
+<section>
 
-                        <label for="password">* Senha</label>
-                        <input type="password"  name="senha_usuario" id="password" required> <br>
+    <div class="container">
+        <div class="card">
+            <fieldset>
+                <h2>Usuários</h3>
+                <hr>
+                
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>E-mail</th>
+                        <th>Celular</th>
+                        <th>UF</th>
+                        <th>Cidade</th>
+                        <th>Bairro</th>
+                        <th>Endereço</th>
+                        <th>Data aniversário</th>
+                        <th>Data cadastro</th>
+                    </tr>
+                    </thead>
 
-                        <label for="check_password">* Confirmar senha</label>
-                        <input type="password" id="check_password" required> <br>
+                    <?php while ($row = mysqli_fetch_array($results)) { ?>
+                        <tr>
+                            <td><?php echo $row['id_usuario']; ?></td>
+                            <td><?php echo $row['nome_usuario']; ?></td>
+                            <td><?php echo $row['sobrenome_usuario']; ?></td>
+                            <td><?php echo $row['email_usuario']; ?></td>
+                            <td><?php echo $row['celular_usuario']; ?></td>
+                            <td><?php echo $row['uf_usuario']; ?></td>
+                            <td><?php echo $row['cidade_usuario']; ?></td>
+                            <td><?php echo $row['bairro_usuario']; ?></td>
+                            <td><?php echo $row['endereco_usuario']; ?></td>
+                            <td><?php echo $row['dtNasc_usuario']; ?></td>
+                            <td><?php echo $row['dtCad_usuario']; ?></td>
+        
+                            <div class="btn" >
+                                <td><a href="/edit.php">Edit</a></td>
+                                <td><a href="/delete.php">Delete</a></td>
+                            </div><!--btn-->
+                            
+                        </tr>
+                    <?php } ?>
+                </table>
 
-                        <label for="cpf">* CPF</label>
-                        <input type="text"  name="cpf_usuario" id="cpf" required> <br>
+            </fieldset>
+        </div><!--card-->
+    </div><!--container-->
 
-                        <label for="rg">* RG</label>
-                        <input type="tel"  name="rg_usuario" id="rg" required> <br>
+</section>
 
-                        <label for="cel">* Celular</label>
-                        <input type="text"  name="cel_usuario" id="cel" required> <br>
 
-                        <label for="uf">* UF</label>
-                        <select  name="uf_usuario" id="uf" required>
-                            <option value="">Selecione</option>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AM">AM</option>
-                            <option value="AP">AP</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="DF">DF</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MG">MG</option>
-                            <option value="MS">MS</option>
-                            <option value="MT">MT</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="PR">PR</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SE">SE</option>
-                            <option value="SP">SP</option>
-                            <option value="TO">TO</option>
-                        </select> <br>
 
-                        <label for="city">* Cidade</label>
-                        <input type="text"  name="cidade_usuario" id="city" required> <br>
-
-                        <label for="district">* Bairro</label>
-                        <input type="text"  name="bairro_usuario" id="district" required> <br>
-
-                        <label for="address">* Endereço</label>
-                        <input type="text"  name="endereco_usuario" id="address" required> <br>
-                        
-                        <label for="birth_date">* Data de nascimento</label>
-                        <input type="date"  name="dtNasc_usuario" id="birth_date" required> <br>
-
-                        <input type="submit" name="sbmt" value="Cadastrar">
-
-                    </form>
-                </fieldset>
-            </div><!--user_form-->
-        </div><!--container-->
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>

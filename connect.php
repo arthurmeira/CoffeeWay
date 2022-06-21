@@ -6,6 +6,7 @@
     $password = "";
     $database = "coffeeway";
 
+
     //Conexão ao com mysqli
     $conn = new mysqli($servername, $username, $password, $database);
     return $conn;
